@@ -9,33 +9,16 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
-  <header class="app-bar promote-layer">
-    <div class="app-bar-container">
-      <button class="menu"><%= link_to image_tag("hamburger.svg", alt: "Menu") %></button>
-      <h1 class="logo"><%= full_title(yield(:title)) %></strong></h1>
-      <section class="app-bar-actions">
-      <!-- Put App Bar Buttons Here -->
-      <!-- e.g <button><i class="icon icon-star"></i></button> -->
-      </section>
-    </div>
-  </header>
-  <nav class="navdrawer-container promote-layer">
-    <ul>
-      <li><%= link_to "Log in", "#" %></li>
-      <li><%= link_to "Home", "#" %></li>
-      <li><%= link_to "Help", "#" %></li>
-      
-    </ul>
-  </nav>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/navdrawer' %>
   <main>
     <%= yield %>
+    
   </main>
   
-  
-  
-
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
+
 </body>
 </html>
