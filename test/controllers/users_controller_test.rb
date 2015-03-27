@@ -4,6 +4,7 @@ class UsersControllerTest < ActionController::TestCase
   
   def setup
     @user = users(:ricardo)
+    @other_user = users(:cristina)
   end
   
   test "should get signup" do
@@ -23,5 +24,27 @@ class UsersControllerTest < ActionController::TestCase
     assert_not flash.empty?
     assert_redirected_to login_url
   end
+  
+  # test "should redirect edit when logged in as different user" do
+  #   log_in_as(@other_user)
+  #   get :edit, id: @user
+  #   assert flash.empty?
+  #   assert_redirected_to root_url
+    
+  # end
+  
+  # test "should redirect update when logged in as different user" do
+  #   log_in_as(@user)
+  #   patch :update, id: @other_user, user: { name: @other_user.name, email: @other_user.email}
+  #   assert flash.empty?
+  #   assert_redirected_to root_url
+    
+  # end
+  
+  test "should redirect to login url when visiting index" do
+    get :index
+    assert_redirected_to login_url
+  end
+    
 
 end

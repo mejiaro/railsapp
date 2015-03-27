@@ -4,3 +4,8 @@ ricardo:
   name: Ricardo Mejia
   email: mejiaro@gmail.com
   password_digest: <%= User.digest('password') %>
+  
+cristina:
+  name: Cristina Ramirez
+  email: lamermeow@gmail.com
+  password_digest: <%= User.digest('password') %>
