@@ -4,8 +4,22 @@ ricardo:
   name: Ricardo Mejia
   email: mejiaro@gmail.com
   password_digest: <%= User.digest('password') %>
+  admin: true
   
 cristina:
   name: Cristina Ramirez
   email: lamermeow@gmail.com
   password_digest: <%= User.digest('password') %>
+
+wiwi:
+  name: Wiwi
+  email: wiwi@gmail.com
+  password_digest: <%= User.digest('password') %>
+
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name:  <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
