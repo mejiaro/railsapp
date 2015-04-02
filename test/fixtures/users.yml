@@ -5,16 +5,22 @@ ricardo:
   email: mejiaro@gmail.com
   password_digest: <%= User.digest('password') %>
   admin: true
+  activated: true
+  activated_at: Time.zone.now
   
 cristina:
   name: Cristina Ramirez
   email: lamermeow@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: Time.zone.now
 
 wiwi:
   name: Wiwi
   email: wiwi@gmail.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: Time.zone.now
 
 
 <% 30.times do |n| %>
