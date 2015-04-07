@@ -24,4 +24,12 @@ User.create!(name:  "Ricardo",
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+              
+end
+
+users = User.order(:created_at).take(7)
+lengths = [5,6,7]
+50.times do
+  content = Faker::Lorem.sentence(lengths.sample)
+  users.each { |user| user.microposts.create!(content: content)}
 end
