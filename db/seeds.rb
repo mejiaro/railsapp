@@ -14,7 +14,7 @@ User.create!(name:  "Ricardo",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!( name: "Cristina Ramirez",
+User.create!( name: "Cristina",
               email: "lamermeow@gmail.com",
               password:              "foobar",
               password_confirmation: "foobar",
@@ -23,7 +23,7 @@ User.create!( name: "Cristina Ramirez",
 
 99.times do |n|
   name = Faker::Name.name
-  email = "example-#{n+1}@gmail.com"
+  email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name: name,
                email: email,
@@ -40,3 +40,11 @@ lengths = [5,6,7]
   content = Faker::Lorem.sentence(lengths.sample)
   users.each { |user| user.microposts.create!(content: content)}
 end
+
+#following relationships
+users = User.all
+user = users.first
+following = users.sample(25)
+followers = users.sample(16)
+following.each { |followed| user.follow(followed)}
+followers.each { |follower| follower.follow(user)}
