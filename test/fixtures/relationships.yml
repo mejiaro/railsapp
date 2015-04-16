@@ -1,2 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+# one:
+#   follower: ricardo
+#   followed: cristina
+  
+two:
+  follower: ricardo
+  followed: wiwi
+  
+three:
+  follower: cristina
+  followed: ricardo
+  
+four:
+  follower: chelso
+  followed: ricardo
+  
