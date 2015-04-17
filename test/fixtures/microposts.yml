@@ -3,7 +3,7 @@
 apple:
   content: "I just made a really expensive watch!"
   created_at: <%= 10.minutes.ago %>
-  user: ricardo
+  user: wiwi
   
 cm:
   content: "Check out the @cyanogenmod site: http://cyanogenmod.org"

@@ -77,4 +77,23 @@ class UserTest < ActiveSupport::TestCase
     ricardo.unfollow(cristina)
     assert_not ricardo.following?(cristina)
   end
+  
+  test "should show own microposts and from followed users not others" do
+    ricardo = users(:ricardo)
+    cristina = users(:cristina)
+    wiwi = users(:wiwi)
+    
+    #ver mis posts 
+    ricardo.microposts.each do |micropost|
+      assert ricardo.feed.include?(micropost)
+    end
+    #ver post de wiwi 
+    wiwi.microposts.each do |micropost|
+      assert ricardo.feed.include?(micropost)
+    end
+    #pero no los de la mermeow
+    cristina.microposts.each do |micropost|
+      assert_not ricardo.feed.include?(micropost)
+    end
+  end
 end
